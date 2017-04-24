@@ -1,6 +1,6 @@
 ### Typeform API 
 
-python script to interact with Typeform api and gets the response in csv format
+python script to interact with Typeform api and gets the response in csv format ( Execute : `python get_data.py`)
 
 - Uses requests library
 - Takes only completed responses(which can include missing response on some questions)
@@ -9,6 +9,6 @@ respective columns as answers
 
 ### How to use? 
 
-- Open `keys.ini` file and enter your API key and uid/form id
-- Execute python with `python tests.py`
+- Open `keys.ini` file and enter your API key
+- Execute the program with python : `python get_data.py`
 - Check current folder for the csv file

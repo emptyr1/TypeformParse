@@ -79,12 +79,10 @@ class Typeform:
                 # Check for unicode characters
                 questions_out = list(map(lambda x : unicodedata.normalize('NFKD', x).encode('ascii', 'ignore'),
                                          get_formatted_questions_dict.values()))
-                #print(questions_out)
+
                 csv_writer.writerow(questions_out)
                 for resp in get_formatted_answers_queue:  # loop thru the queue
                     csv_writer.writerow(resp.values()) # write to file
-                #for k, v in get_formatted_questions_dict.items():
-                #    continue
 
             except Exception as err:
                 print(err)

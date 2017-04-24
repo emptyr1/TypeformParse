@@ -1,17 +1,14 @@
-import sys
 import requests
-
 # sys.path.append("/Keboola/")
-
 from Typeform import *
 import logging, configparser
 
-config = configparser.ConfigParser()
-config.read("keys.ini")
-api_key = config['DEFAULT']['API_KEY']
-form_key = config['DEFAULT']['UID']
 
 def main():
+    config = configparser.ConfigParser()
+    config.read("keys.ini")
+    api_key = config['DEFAULT']['API_KEY']
+    form_key = config['DEFAULT']['UID']
 
     # Sample request : https://api.typeform.com/v1/form/[typeform_UID]?key=[your_API_key]
     # Sample request : https://api.typeform.com/v1/forms?key=[your_API_key]
@@ -38,10 +35,5 @@ def main():
         raise ValueError("404 Page not found. Check your keys")
 
 
-
-
 if __name__ == '__main__':
-    config = configparser.ConfigParser()
-    config.read("keys.ini")
-    print(config['DEFAULT']['API_KEY'])
     main()
